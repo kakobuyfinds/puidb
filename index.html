@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Dansk guide til HooBuy spreadsheet. Find sko, tøj og tilbehør, og se, hvordan du tjekker produktlinks, størrelser, QC-billeder og fragt til Danmark.">
+  <meta name="theme-color" content="#f5f0e7">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="HooBuy spreadsheet | Dansk guide til links, QC og fragt">
+  <meta property="og:description" content="Vælg en kategori, sammenlign varianter, og tjek billeder og fragt, før du bestiller.">
+  <title>HooBuy spreadsheet | Dansk guide til links, QC og fragt</title>
+  <!-- Redaktionel research: 10 webkilder. Placeringerne på Googles første resultatside kunne ikke bekræftes. -->
+  <style>
+    :root{color-scheme:light;--paper:#f5f0e7;--ink:#231c27;--muted:#5e5161;--plum:#4b2454;--line:#d5c9cd;--white:#fffdf8;--lime:#e9f59e;--lavender:#e8dfec}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.13}
+    h1,h2{letter-spacing:-.045em}
+    h1{font-size:clamp(2.6rem,7vw,5.6rem);overflow-wrap:anywhere}
+    h2{font-size:clamp(1.9rem,4vw,3.15rem)}
+    h3{font-size:1.35rem}
+    p+p{margin-top:.8rem}
+    a{color:inherit}
+    :focus-visible{outline:3px solid #ad4007;outline-offset:4px}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .top{border-bottom:1px solid var(--line)}
+    .top .wrap,.foot .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1.25rem;padding-block:.9rem}
+    .brand{font-weight:850;text-decoration:none}
+    .tag{font-weight:750;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+    .cats{padding-block:1.2rem;border-bottom:1px solid var(--line)}
+    .cats ul,.gallery,.articles{display:grid;gap:.55rem}
+    .cats ul{grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;margin:.7rem 0 0;padding:0}
+    .cats a{display:flex;align-items:center;justify-content:space-between;gap:.4rem;height:100%;padding:.55rem .7rem;border:1px solid var(--line);border-radius:.5rem;background:var(--white);font-weight:700;font-size:.86rem;text-decoration:none}
+    .cats a:hover{background:var(--lime);border-color:var(--plum)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(1rem,4vw,3rem);align-items:center;margin-block:clamp(1.35rem,4vw,3.5rem);padding:clamp(1.25rem,4vw,3rem);border-radius:1.25rem;background:var(--plum);color:var(--white)}
+    .hero .tag{color:var(--lime)}
+    .hero h1{margin:.5rem 0 1rem}
+    .hero p{max-width:43ch}
+    .cta{display:inline-block;margin-top:1.2rem;padding:.65rem 1rem;border-radius:.5rem;background:var(--lime);color:#242611;font-weight:800;text-decoration:none}
+    .cta:hover{text-decoration:underline}
+    .hero :focus-visible{outline-color:var(--lime)}
+    img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+    .hero img{border-radius:.8rem;background:var(--white)}
+    figcaption{padding:.55rem .65rem;font-size:.87rem}
+    .hero figcaption{padding:.6rem 0 0}
+    section{margin-block:clamp(2.1rem,6vw,4.5rem)}
+    .intro{max-width:65ch;margin:.7rem 0 1.15rem;color:var(--muted)}
+    .gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem}
+    .gallery figure{overflow:hidden;border:1px solid var(--line);border-radius:.75rem;background:var(--white)}
+    .gallery img{background:#eee9e5}
+    .articles{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    article{border-top:4px solid var(--plum);border-radius:.35rem .35rem .8rem .8rem;background:var(--white);padding:clamp(1rem,3vw,1.55rem)}
+    article h3{margin:.4rem 0 .7rem}
+    .check{border-radius:1rem;background:var(--lavender);padding:clamp(1.15rem,4vw,2rem)}
+    .check ol{margin:.8rem 0 0;padding-inline-start:1.4rem}
+    .check li+li{margin-top:.4rem}
+    details{padding:.8rem .2rem;border-bottom:1px solid var(--line)}
+    details:first-of-type{margin-top:.65rem}
+    summary{cursor:pointer;font-weight:800}
+    details p{max-width:69ch;padding:.45rem 0 0 1.2rem}
+    .foot{background:var(--white);border-top:1px solid var(--line)}
+    .foot p{max-width:66ch;color:var(--muted);font-size:.88rem}
+    @media(max-width:55rem){.cats ul{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:42rem){.hero,.articles{grid-template-columns:1fr}.hero figure{max-width:27rem}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:30rem){.cats ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "HooBuy spreadsheet | Dansk guide til links, QC og fragt",
+        "description": "Dansk guide til HooBuy spreadsheet. Find sko, tøj og tilbehør, og se, hvordan du tjekker produktlinks, størrelser, QC-billeder og fragt til Danmark.",
+        "inLanguage": "da"
+      },
+      {
+        "@type": "FAQPage",
+        "name": "Ofte stillede spørgsmål om HooBuy spreadsheet",
+        "inLanguage": "da",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hvad er et HooBuy spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Et HooBuy spreadsheet er en samling produktlinks og oplysninger, du kan bruge til at sammenligne varer. Kontrollér den aktuelle produktannonce for at se, hvilke farver og størrelser der kan vælges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan tjekker jeg et produktlink fra regnearket?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Åbn kildelinket, og sammenlign varenummer, sælger, billeder og den valgte variant med det, du har gemt. Hvis linket lander på en anden vare, skal du finde en annonce, hvor oplysningerne stemmer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad kan jeg se på QC-billeder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "QC-billeder fra et lager kan vise detaljer som mærkning, syninger, farve og mål. De kan hjælpe dig med at tjekke varen før afsendelse. Ægthed kræver særskilt dokumentation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan sammenligner jeg fragt til Danmark?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Brug pakkens mål og vægt i fragtberegneren, og sammenlign, hvad hver forsendelsesmulighed inkluderer. Notér valutaen, og regn fragt og eventuelle importomkostninger med i dit budget."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/puidb/">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+      <span class="tag">Dansk indkøbsguide</span>
+    </div>
+  </header>
+
+  <nav class="cats" aria-label="Produktkategorier">
+    <div class="wrap">
+      <p class="tag">Vælg en kategori</p>
+      <ul>
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Sko <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hættetrøjer og strik <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jakker <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Bukser og shorts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Kasketter og huer <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Tøjsæt <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Undertøj <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Sportstrøjer <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Tilbehør <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="hero">
+      <div>
+        <p class="tag">Fra produktlink til kortliste</p>
+        <h1>HooBuy spreadsheet</h1>
+        <p>Et HooBuy spreadsheet samler produktlinks, så du kan sammenligne sko, tøj og tilbehør. Start med en kategori, og kontrollér varenummer, størrelse og farve i kildens annonce, før du gemmer et fund.</p>
+        <a class="cta" href="https://www.hipobuyfind.com">Se produktoversigten på HipobuyFind</a>
+      </div>
+      <figure>
+        <img src="https://sneak.fi/cdn/shop/files/Sneak-Nike-P-6000-White-Blue-Tint-Sail-Metallic-Silver-1.webp?v=1751151751&amp;width=600"
+             srcset="https://sneak.fi/cdn/shop/files/Sneak-Nike-P-6000-White-Blue-Tint-Sail-Metallic-Silver-1.webp?v=1751151751&amp;width=440 440w, https://sneak.fi/cdn/shop/files/Sneak-Nike-P-6000-White-Blue-Tint-Sail-Metallic-Silver-1.webp?v=1751151751&amp;width=880 880w"
+             sizes="(max-width: 42rem) 85vw, (max-width: 74rem) 40vw, 450px"
+             width="880" height="880" loading="eager" fetchpriority="high"
+             alt="Nike P-6000 i hvidt mesh med sølvfarvede paneler set fra siden">
+        <figcaption>Nike P-6000 · se på overdel, sål og snøring</figcaption>
+      </figure>
+    </div>
+
+    <section aria-labelledby="detaljer">
+      <h2 id="detaljer">Detaljerne, du kan sammenligne</h2>
+      <p class="intro">Billederne viser eksempler på snit, materialer og lukninger. Tjek den aktuelle annonce for oplysninger om den vare, du overvejer.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://de.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-jacke-im-trucker-stil-aus-denim--HSA18WPNB650_PM1_Side%20view.png?hei=480&amp;wid=480"
+               width="480" height="480" loading="lazy" decoding="async"
+               alt="Lyseblå Louis Vuitton-denimjakke med krave og monogramdetaljer">
+          <figcaption>Louis Vuitton · snit og skulderbredde</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1659595532/681264_3HAGJ_2564_001_100_0000_Light-Casquette-en-toileGG-jumbo.jpg"
+               width="1200" height="1200" loading="lazy" decoding="async"
+               alt="Beige Gucci-baseballkasket med stort GG-mønster og brun skyggekant">
+          <figcaption>Gucci · skygge og justering</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/bracelet-clic-h--700001F%204P-front-1-300-0-1000-1000_b.jpg?wid=480"
+               width="480" height="480" loading="lazy" decoding="async"
+               alt="Hermès Clic H-armbånd med emalje og guldfarvet H-lås">
+          <figcaption>Hermès · lås og pasform</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.laced.com/products/b1ffb8fd-846b-4578-a7b1-6b0228a99fbd.jpg?auto=format&amp;fit=max&amp;q=75&amp;w=480"
+               width="480" height="480" loading="lazy" decoding="async"
+               alt="Hvid lav Dior B27-sneaker med perforeret sidepanel set fra siden">
+          <figcaption>Dior · paneler og sålprofil</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="guides">
+      <h2 id="guides">Fire korte indkøbsguider</h2>
+      <p class="intro">Brug guiderne, når du gennemgår HooBuy-produktlinks, tager mål eller sammenligner en mulig forsendelse til Danmark.</p>
+      <div class="articles">
+        <article>
+          <p class="tag">01 · Links</p>
+          <h3>Find den oprindelige produktannonce</h3>
+          <p>Gem link og varenummer, når du finder en interessant model. Ved produktlinks fra Weidian, Taobao eller 1688 er sælgerens navn, billeder og variantnavn gode holdepunkter, især når flere annoncer bruger samme titel.</p>
+          <p>Ved et udløbet produktlink kan du søge på varenummeret. Kontrollér farvevalg, størrelse og lagerstatus i den nye annonce, før du tilføjer den til din kortliste.</p>
+        </article>
+        <article>
+          <p class="tag">02 · Størrelser</p>
+          <h3>Sammenlign mål med noget, du allerede bruger</h3>
+          <p>Brug sælgerens størrelsesguide til sneakers, og se, om den angiver fodlængde eller indersålsmål. Sammenlign mål af samme type i centimeter. EU-størrelsen alene fortæller sjældent, hvor bred skoen er.</p>
+          <p>For hættetrøjer og T-shirts kan du måle brystbredden og længden på et stykke tøj, der passer. Tjek taljemål på bukser, plads til et ekstra lag under jakken og kaskettens justerbare omkreds.</p>
+        </article>
+        <article>
+          <p class="tag">03 · QC</p>
+          <h3>Brug QC-billeder til at tjekke den valgte variant</h3>
+          <p>Hvis lageret tilbyder kvalitetskontrol, så sammenlign lagerbillederne med annoncen. Se efter skostørrelsen på mærkaten, nærbilleder af syninger og eventuelle forskelle mellem højre og venstre sko.</p>
+          <p>For et armbånd kan du bede om et billede af låsen og et mål med lineal. Hvis farven ser anderledes ud, kan et ekstra foto i neutralt lys hjælpe dig med at vurdere den.</p>
+        </article>
+        <article>
+          <p class="tag">04 · Fragt</p>
+          <h3>Regn samlet pris i danske kroner</h3>
+          <p>Notér vareprisen i CNY, den anvendte kurs til DKK og eventuel indenrigsfragt i Kina. Læg derefter international fragt og de øvrige omkostninger, der gælder for din ordre, til budgettet.</p>
+          <p>Se, om fragtberegneren bruger pakkens faktiske vægt eller volumenvægt. Hvis du samler flere varer i én pakke, så indhent et nyt fragtoverslag med de samlede mål.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="check" aria-labelledby="kortliste">
+      <h2 id="kortliste">Tjekliste til din kortliste</h2>
+      <ol>
+        <li>Skriv produktlink, varenummer og variant ned, så du kan finde samme vare igen.</li>
+        <li>Gem sælgerens størrelsestabel og dine egne mål, og notér datoen for sammenligningen.</li>
+        <li>Angiv, hvilket QC-foto du mangler, for eksempel et billede af mærkat, sål eller lås.</li>
+        <li>Før varepris, fragtoverslag og eventuelle gebyrer hver for sig, så du kan sammenligne den samlede pris.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="faq">
+      <h2 id="faq">Ofte stillede spørgsmål om HooBuy spreadsheet</h2>
+      <details open>
+        <summary>Hvad er et HooBuy spreadsheet?</summary>
+        <p>Et HooBuy spreadsheet er en samling produktlinks og oplysninger, du kan bruge til at sammenligne varer. Kontrollér den aktuelle produktannonce for at se, hvilke farver og størrelser der kan vælges.</p>
+      </details>
+      <details>
+        <summary>Hvordan tjekker jeg et produktlink fra regnearket?</summary>
+        <p>Åbn kildelinket, og sammenlign varenummer, sælger, billeder og den valgte variant med det, du har gemt. Hvis linket lander på en anden vare, skal du finde en annonce, hvor oplysningerne stemmer.</p>
+      </details>
+      <details>
+        <summary>Hvad kan jeg se på QC-billeder?</summary>
+        <p>QC-billeder fra et lager kan vise detaljer som mærkning, syninger, farve og mål. De kan hjælpe dig med at tjekke varen før afsendelse. Ægthed kræver særskilt dokumentation.</p>
+      </details>
+      <details>
+        <summary>Hvordan sammenligner jeg fragt til Danmark?</summary>
+        <p>Brug pakkens mål og vægt i fragtberegneren, og sammenlign, hvad hver forsendelsesmulighed inkluderer. Notér valutaen, og regn fragt og eventuelle importomkostninger med i dit budget.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Uafhængig dansk guide. Produktbillederne er modelreferencer, og kategorierne fører til HipobuyFind.</p>
+      <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+    </div>
+  </footer>
+</body>
+</html>
